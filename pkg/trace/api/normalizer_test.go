@@ -44,12 +44,6 @@ func TestNormalizeServicePassThru(t *testing.T) {
 	assert.Equal(t, before, s.Service)
 }
 
-func TestNormalizeEmptyService(t *testing.T) {
-	s := testSpan()
-	s.Service = ""
-	assert.Error(t, normalize(s))
-}
-
 func TestNormalizeLongService(t *testing.T) {
 	s := testSpan()
 	s.Service = strings.Repeat("CAMEMBERT", 100)
